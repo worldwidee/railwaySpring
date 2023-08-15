@@ -28,7 +28,7 @@ public class storyController {
         return  service.getStories();
     }
 
-    @GetMapping("/auth/success-stories/{id}")
+    @PostMapping("/auth/success-stories/{id}")
     //@PreAuthorize("hasAuthority('ROLE_USER')")
     public Story findStoryById(@PathVariable int id){
         return service.findStory(id);
