@@ -54,7 +54,7 @@ public class UserController {
         return response;
     }
 
-    @GetMapping("/public/check-user")
+    @PostMapping("/public/check-user")
     //@PreAuthorize("hasAuthority('ROLE_USER')")
     public Map<String,Object> checkUser (@RequestBody phoneNumber number){
         Map<String, Object> response = new HashMap<>();
@@ -71,7 +71,7 @@ public class UserController {
     }
 
 
-    @GetMapping("/public/login")
+    @PostMapping("/public/login")
     public Map<String,String> AuthAndGenerateToken(@RequestBody AuthRequest authRequest){
 
         Authentication authentication = authenticationManager.authenticate(
@@ -89,7 +89,7 @@ public class UserController {
         }
 
     }
-    @GetMapping("/public/login/version:2")
+    @PostMapping("/public/login/version:2")
     public ResponseEntity<Map<String,Object>>  AuthAndGenerateTokenV2(@RequestBody AuthRequest authRequest) throws UserNotFoundException {
 
         try {
