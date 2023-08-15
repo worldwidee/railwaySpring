@@ -22,7 +22,7 @@ public class storyController {
         return service.saveStories(stories);
     }
 
-    @GetMapping("/auth/success-stories")
+    @PostMapping("/auth/success-stories")
     //@PreAuthorize("hasAuthority('ROLE_USER')")
     public List<Story> findAllStories (){
         return  service.getStories();
